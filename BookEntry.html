@@ -8,16 +8,33 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
       <title>New Book Entry</title>
- 
+
       <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
       <div class="container">
             <center>
-                  <h3>New Book Entry</h3>
+                  <div>
+                        <h3>New Book Entry</h3>
+                  </div>
+                  <div>
+                        <label>Title: </label>
+                        <input id="Title" placeholder="Name of the book">
+                        <label>Author: </label>
+                        <input id="Author" placeholder="Name of the Author">
+                        <label>Age Rate: </label>
+                        <input id="Age" placeholder="Age classification">
+                        <label>Category: </label>
+                        <input id="Category" placeholder="Category of the book">
+                        <label>Language: </label>
+                        <input id="Language" placeholder="Book's language">
+                        <label>Section: </label>
+                        <input id="Section" placeholder="Where is the book?">
 
-                  
+                        <br><br>
+                        <button onclick="Submit()" >Submit</button>
+                        </div>
             </center>
 
 </html>
