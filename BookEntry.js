@@ -7,7 +7,7 @@ function Submit() {
       console.log($BookName);
       $BookName = NewBook($BookName);
       console.log(BookName, $BookName);
-      BookList[0] = "<br> <a id='" + BookName + "'href='SelBook.html'>" + Bookname + " - " + $BookName[Author] + " </a> <br>;
+      BookList[0] = '<br> <a id="' + BookName + '" href="SelBook.html>"' + Bookname + ' - ' + $BookName[Author] + ' </a> <br>';
       BookList.sort();
 
 }
