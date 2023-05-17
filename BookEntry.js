@@ -1,4 +1,5 @@
 var BookName
+var BookList
 function Submit() {
       BookName = document.getElementById("Title").value;
       console.log(BookName);
@@ -6,7 +7,9 @@ function Submit() {
       console.log($BookName);
       $BookName = NewBook($BookName);
       console.log(BookName, $BookName);
-    
+      BookList[0] = BookName;
+      BookList.sort();
+      
 }
 
 function NewBook(array) {
@@ -20,3 +23,6 @@ function NewBook(array) {
       return Book
 }
 
+function Home() {
+      window.open("Booklist.html")
+}
