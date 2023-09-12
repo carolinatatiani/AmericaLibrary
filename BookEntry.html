@@ -1,45 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+      <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
       <title>New Book Entry</title>
-
       <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-      <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-primary ">
+            <a class="navbar-brand" href="#" style="color: black;font-family: 'Roboto Mono', monospace;">America's
+                  Library</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                              <a class="nav-link" href="BookList.html"
+                                    style="color: black;font-family: 'Roboto Mono', monospace;">Home<span
+                                          class="sr-only">(current)</span></a>
+                        </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" id="searchTxt" type="search" placeholder="Search"
+                              aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+            </div>
+      </nav>
+
+      <div id="message"></div>
+      <div class="container my-3">
             <center>
                   <div>
-                        <h3>New Book Entry</h3>
+                        <h3 id="heading">New Book Entry</h3>
                   </div>
-                  <div>
-                        <label>Title: </label>
-                        <input id="Title" placeholder="Name of the book">
-                        <label>Author: </label>
-                        <input id="Author" placeholder="Name of the Author">
-                        <label>Age Rate: </label>
-                        <input id="Age" placeholder="Age classification">
-                        <label>Category: </label>
-                        <input id="Category" placeholder="Category of the book">
-                        <label>Language: </label>
-                        <input id="Language" placeholder="Book's language">
-                        <label>Section: </label>
-                        <input id="Section" placeholder="Where is the book?">
+                  <hr>
+                  <br><br><br>
+                  <form id="libraryForm">
+                        <div class="form-group row">
+                              <div class="col">
+                                    <label for="Title" class="col-form-label"> Title: </label>
+                              </div>
+                              <div class="col">
+                                    <input type="text" class="form-control" id="Title" placeholder="Name of the book">
+                              </div>
+                              <div class="col">
+                                    <label for="Author" class="col-form-label">Author: </label>
+                              </div>
+                              <div class="col">
+                                    <input type="text" class="form-control" id="Author"
+                                          placeholder="Name of the Author">
+                              </div>
+                        </div>
+                        <div class="form-group row">
+                              <div class="col">
+                                    <label for="Age" class="col-form-label">Age Rate: </label>
+                              </div>
+                              <div class="col">
+                                    <input type="number" class="form-control" id="Age" placeholder="Age classification">
+                              </div>
 
-                        <br><br>
-                        <button onclick="Submit()">Submit</button>
-                        <br><br>
-                        <button onclick="Home()">Return to Main Page</button>
+                              <div class="col">
+                                    <label for="Category" class="col-form-label">Category: </label>
+                              </div>
+                              <div class="col">
+                                    <input type="text" class="form-control" id="Category" placeholder="Book's Category">
+                              </div>
+                        </div>
+                        <div class="form-group row">
+                              <div class="col">
+                                    <label for="Language" class="col-form-label">Language</label>
+                              </div>
+                              <div class="col">
+                                    <input type="text" class="form-control" id="Language" placeholder="Book's language">
+                              </div>
 
+                              <div class="col">
+                                    <label for="Section" class="col-form-label">Section: </label>
+                              </div>
+                              <div class="col">
+                                    <input type="text" class="form-control" id="Section"
+                                          placeholder="Where is the book?">
+                              </div>
+                        </div>
 
-                  </div>
+                        <hr>
+                        <div class="form-group row">
+                              <div class="col">
+                                    <button type="submit" class="btn btn-primary">Add Book</button>
+                              </div>
+                        </div>
+                  </form>
             </center>
-            <script src="BookEntry.js"></script>
+      </div>
+      <script src="BookEntry.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+</body>
 
 </html>

@@ -2,27 +2,81 @@
 <html>
 
 <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap" rel="stylesheet">
 
       <title>New Book Entry</title>
 
-      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="styleII.css">
 </head>
 
-<body onload()>
-      <center>
-            <div class="container">
-                  <h3>Our Library Cataloge</h3>
-                  <hr><hr>
-                  <div id="BookList">
-                  </div>
-
-
+<body>
+      <nav class="navbar navbar-expand-lg navbar-primary ">
+            <a class="navbar-brand" href="#" style="color: black;font-family: 'Roboto Mono', monospace;">America's
+                  Library</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                              <a class="nav-link" href="#"
+                                    style="color: black;font-family: 'Roboto Mono', monospace;">Home<span
+                                          class="sr-only">(current)</span></a>
+                        </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" id="searchTxt" type="search" placeholder="Search"
+                              aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
             </div>
-      </center>
-      <script src="BookEntry.js"></script>
+      </nav>
 
+      <div id="message"></div>
+      <div class="container my-3">
+            <center>
+                  <h3>Our Library Catalogue</h3>
+                  <hr>
+                  <div id="table">
+                        <table class="table table-striped">
+                              <thead>
+                                    <tr>
+                                          <th scope="col">Title</th>
+                                          <th scope="col">Author</th>
+                                          <th scope="col">Age</th>
+                                          <th scope="col">Category</th>
+                                          <th scope="col">Language</th>
+                                          <th scope="col">Section</th>
+                                    </tr>
+                              </thead>
+                              <tbody id='tableBody'></tbody>
+                        </table>
+                  </div>
+      </div>
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <!-- <script src="index.js"></script> -->
+      <script src="BookEntry.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+      </center>
+      
 </html>

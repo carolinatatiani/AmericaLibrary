@@ -1,27 +1,20 @@
-label {
-      font-size: 20px !important;
-      letter-spacing: 3px !important;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: bold;
-}
-
 body {
-      background: url("Year3.png");
+      background: url("Year4A.png");
       background-repeat: no-repeat;
-      background-size: cover  !important;
-      font-size: 15px;
+      background-size: cover;
+      font-size: medium;
 }
 
 h3 {
-      font-family: 'Kablammo', cursive;
-      margin: 10px;
-      padding: 30px;
+      border-style: dotted;
+      border-width: 10px;
+      border-radius: 20px;
+      border-color: #FBF5E5;
+      margin: 30px;
+      padding: 10px;
       font-size: 100px;
       color: black;
-}
-
-input {
-      text-align: center;
+      font-family: 'Bacasime Antique', serif;
 }
 
 .btn {
@@ -54,4 +47,3 @@ input {
       background-color: #b8f2e6 !important;
       color: #7599eb !important;
       border-color: #faf3dd !important;
-}
