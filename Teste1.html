@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Kablammo&family=Roboto+Mono&display=swap"
+    rel="stylesheet">
+  <title>Try Out</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-5">America Library</h1>
+    <form action="" id="libraryForm">
+      <div class="form-group mb-3">
+        <label for="Title">Book Title:</label>
+        <input type="text" class="form-control" id="Title" placeholder="Name of the Book" />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Author">Book Author:</label>
+        <input type="text" class="form-control" id="Author" placeholder="Author of the Book" required />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Age">Age Rate:</label>
+        <input type="number" class="form-control" id="Age" placeholder="Age rate" required />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Category">Category:</label>
+        <input type="text" class="form-control" id="Category" placeholder="Category" required />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Language">Language:</label>
+        <input type="text" class="form-control" id="Language" placeholder="Language" required />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Section">Section: </label>
+        <input type="text" class="form-control" id="Section" placeholder="Where is the book" required />
+      </div>
+      <button type="submit" class="btn btn-primary ml-2" id="addBtn"> <span class="glyphicon glyphicon-save">
+        </span>Add Book</button>
+      <button class="btn btn-warning ml-2" type="button" id="clearBtn"><span class="glyphicon glyphicon-trash">
+        </span>Clear all</button>
+    </form>
+    <table class="table mt-4" id="BookTable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Age Rate</th>
+          <th>Category</th>
+          <th>Language</th>
+          <th>Section</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="editModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">EditBook</h4>
+        </div>
+        <div class="modal-body">
+          <form action="" id="editForm">
+            <div class="form-group mb-3">
+              <label for="editTitle">Book Title:</label>
+              <input type="text" class="form-control" id="editTitle" placeholder="Name of the Book" />
+            </div>
+            <div class="form-group mb-3">
+              <label for="editAuthor">Book Author:</label>
+              <input type="text" class="form-control" id="editAuthor" placeholder="Author of the Book" required />
+            </div>
+            <div class="form-group mb-3">
+              <label for="editAge">Age Rate:</label>
+              <input type="number" class="form-control" id="editAge" placeholder="Age rate" required />
+            </div>
+            <div class="form-group mb-3">
+              <label for="Category">Category:</label>
+              <input type="text" class="form-control" id="Category" placeholder="Category" required />
+            </div>
+            <div class="form-group mb-3">
+              <label for="Language">Language:</label>
+              <input type="text" class="form-control" id="Language" placeholder="Language" required />
+            </div>
+            <div class="form-group mb-3">
+              <label for="editSection">Section: </label>
+              <input type="text" class="form-control" id="editSection" placeholder="Where is the book" required />
+            </div>
+            <input type="hidden" id="editBookId">
+            <button type="submit" class="btn btn-primary ml-2 glyphicon glyphicon-save" id="editBtn"></button>
+            <button class="btn btn-warning ml-2 glyphicon glyphicon-remove" type="button" id="closeBtn"
+              data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="BookEntry.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

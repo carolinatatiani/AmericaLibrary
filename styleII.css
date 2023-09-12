@@ -20,30 +20,49 @@ h3 {
 .btn {
       border-width: 2px !important;
       border-style: ridge !important;
-      font-family: 'Roboto Mono', monospace;
+      font-family: 'Merriweather', serif !important;
       font-weight: bolder;
       letter-spacing: 2px;
       border-radius: 10px;
 }
 
 .btn-primary {
-      background-color: #faf3dd !important;
-      color: #a2b9f0 !important;
-      border-color: #fdcdbe !important;
+      background-color: #fbf5e5 !important;
+      color: #a1b8ef !important;
+      border-color: #fcccbd !important;
 }
 
 .btn-success {
-      background-color: #b8f2e6 !important;
-      color: #a2b9f0 !important;
-      border-color: #faf3dd !important;
+      background-color: #B8F1E5 !important;
+      color: #a1b8ef !important;
+      border-color: #fbf5e5 !important;
 }
 
 .btn-outline-success {
       color: black !important;
-      border-color: #faf3dd !important;
+      border-color: #fbf5e5 !important;
 }
 
 .btn-outline-success:hover {
-      background-color: #b8f2e6 !important;
-      color: #7599eb !important;
-      border-color: #faf3dd !important;
+      background-color: #B8F1E5 !important;
+      color: #a1b8ef !important;
+      border-color: #fbf5e5 !important;
+}
+
+li,
+th {
+      font-family: 'Merriweather', serif;
+      font-size: 20px;
+}
+
+.copyright {
+      position: fixed;
+      bottom: 0;
+      color: #FBF5E5;
+      width: 100%;
+      background: #a1b8ef;
+      text-align: right;
+      line-height: 2;
+      font-size: 20px;
+      font-weight: 700;
+}

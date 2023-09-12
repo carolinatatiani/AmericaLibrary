@@ -8,8 +8,8 @@ label {
 body {
       background: url("Year3.png");
       background-repeat: no-repeat;
-      background-size: cover  !important;
-      font-size: 15px;
+      background-size: cover !important;
+      font-size: 30px;
 }
 
 h3 {
@@ -34,9 +34,15 @@ input {
 }
 
 .btn-primary {
-      background-color: #faf3dd !important;
-      color: #a2b9f0 !important;
-      border-color: #fdcdbe !important;
+      background-color:#b8f2e6 !important;
+      color: #7599eb !important;
+      border-color: #faf3dd !important;
+}
+
+.btn-danger {
+      background-color: #fdcdbe !important;
+      color: #7599eb !important;
+      border-color: #b8f2e6 !important;
 }
 
 .btn-success {
@@ -54,4 +60,26 @@ input {
       background-color: #b8f2e6 !important;
       color: #7599eb !important;
       border-color: #faf3dd !important;
+}
+.btn-warning {
+      background-color: #faf3dd !important;
+      color:#a2b9f0 !important;
+      border-color: #fdcdbe !important;
+}
+
+li {
+      font-size: 20px;
+}
+
+.copyright {
+      position: fixed;
+      bottom: 0;
+      color: #7599eb;
+      width: 100%;
+      background: #faf3dd;
+      text-align: right;
+      line-height: 2;
+      font-size: 20px;
+      font-weight: 700;
+      
 }

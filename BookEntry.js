@@ -1,135 +1,112 @@
-class Library {
-      constructor(Title, Author, Age, Category, Language, Section, Image) {
-            this.Title = Title;
-            this.Author = Author;
-            this.Age = Age;
-            this.Category = Category;
-            this.Language = Language;
-            this.Section = Section;
-      }
+let books = [];
+
+function addBook(book) {
+  let table = $("#BookTable tbody");
+  table.append(
+    `<tr id="${book.id}">
+                  <td>${book.Title}</td>  
+                  <td>${book.Author}</td>
+                  <td>${book.Age}</td>
+                  <td>${book.Genre}</td>
+                  <td>${book.Language}</td>
+                  <td>${book.Section}</td>
+                  <td>
+                  <button class="btn btn-primary editBtn" data-id="${book.id}">
+                  <span class="glyphicon glyphicon-edit"</span></button>
+                  <button class="btn btn-sm btn-danger deleteBtn" data-id="${book.id}">
+                  <span class="glyphicon glyphicon-trash"></span></button> 
+                  </td>
+            `)
 }
 
-class Display {
-      add(bookoflibrary) {
-            console.log("Adding to UI");
-            let tableBody = document.getElementById('tableBody');
-            let uiString = `<tr>
-                            <td>${bookoflibrary.Title}</td>
-                            <td>${bookoflibrary.Author}</td>
-                            <td>${bookoflibrary.Age}</td>
-                            <td>${bookoflibrary.Category}</td>
-                            <td>${bookoflibrary.Language}</td>
-                            <td>${bookoflibrary.Section}</td>
-                        </tr>`;
-            tableBody.innerHTML += uiString;
-      }
-
-      clear() {
-            let libraryForm = document.getElementById('libraryForm');
-            libraryForm.reset();
-      }
-
-      validate(bookoflibrary) {
-            if (bookoflibrary.Title.length < 2 || bookoflibrary.Author.length < 2) {
-                  return false
-            }
-            else {
-                  return true;
-            }
-      }
-
-      show(type, displayMessage) {
-            let message = document.getElementById('message');
-            let boldText;
-            if (type === 'success') {
-                  boldText = 'Success';
-            }
-            else {
-                  boldText = 'Error!';
-            }
-            message.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
-                                <strong>${boldText}:</strong> ${displayMessage}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                                </button>
-                            </div>`;
-            setTimeout(function () {
-                  message.innerHTML = ''
-            }, 5000);
-
-      }
+function clearForm() {
+  $("#Title").val("");
+  $("#Author").val("");
+  $("#Age").val("");
+  $("#Genre").val("");
+  $("#Language").val("");
+  $("#Section").val("");
 }
 
-let libraryForm = document.getElementById('libraryForm');
-libraryForm.addEventListener('submit', libraryFormSubmit);
-
-function libraryFormSubmit(e) {
-
-      console.log('You have submitted library form');
-
-      let Title = document.getElementById('Title').value;
-      let Author = document.getElementById('Author').value;
-      let Age = document.getElementById('Age').value;
-      let Category = document.getElementById('Category').value;
-      let Language = document.getElementById('Language').value;
-      let Section = document.getElementById('Section').value;
-
-
-
-      let bookoflibrary = new Library(Title, Author, Age, Category, Language, Section);
-      console.log(bookoflibrary);
-      localStorage.setItem("BookList", bookoflibrary);
-      window.open("BookList.html")
-      localStorage.getItem("BookList", bookoflibrary);
-      let display = new Display();
-
-      if (display.validate(bookoflibrary)) {
-
-            display.add(bookoflibrary);
-            display.clear();
-            display.show('success', 'Your book has been successfully added')
-      }
-      else {
-            // Show error to the user
-            display.show('danger', 'Sorry you cannot add this book');
-      }
-
-      e.preventDefault();
+function generateID() {
+  return Math.floor(Math.random() * 100000);
 }
 
+$(document).on("click", "#clearBtn", function () {
+  clearForm();
+});
 
+$("#libraryForm").submit(function (e) {
+  e.preventDefault();
+  let book = {
+    id: generateID(),
+    Title: $("#Title").val(),
+    Author: $("#Author").val(),
+    Age: $("#Age").val(),
+    Genre: $("#Genre").val(),
+    Language: $("#Language").val(),
+    Section: $("#Section").val(),
 
+  };
+  books.push(book);
+  addBook(book);
+  setTimeout(clearForm, 5000);
+});
 
-/*
-function Submit() {
-      BookName = document.getElementById("Title").value;
-      console.log(BookName);
-      let $BookName = {};
-      console.log($BookName);
-      $BookName = NewBook($BookName);
-      console.log($BookName["Author"]);
-      console.log(BookName)
-      BookList[0] = '<br><a id="' + BookName + '" href="SellBook.html">' + BookName + ' ' + $BookName["Author"] + '</a> <br>';
-      BookList.sort;
-      localStorage.setItem("BookList", BookList);
+$("editForm").submit(function (e) {
+  e.preventDefault();
 
-}
+  let bookId = $("#editBookId").val();
+  let bookIndex = books.findIndex((book) => book.id == bookId);
+  let book = book[bookIndex];
 
-function NewBook(array) {
-      document.getElementById("Title").value = "";
-      document.getElementById("Author").value = "";
-      document.getElementById("Age").value = "";
-      document.getElementById("Category").value = "";
-      document.getElementById("Language").value = "";
-      document.getElementById("Section").value = "";
-      document.getElementById("Image").value = "";
-}
+  book.Title = $("editBookTitle").val();
+  book.Author = $("editAuthor").val();
+  book.Age = $("editAge").val();
+  book.Language = $("editLanguage").val();
+  book.Genre = $("editGenre").val();
+  book.Section = $("editSection ").val();
 
-function Home() {
-      window.open("BookList.html");
-}
+  let row = $(`#${book.id}`);
+  row.find("td:eq(0)").text(book.Title);
+  row.find("td:eq(0)").text(book.Author);
+  row.find("td:eq(0)").text(book.Genre);
+  row.find("td:eq(0)").text(book.Age);
+  row.find("td:eq(0)").text(book.Language);
+  row.find("td:eq(0)").text(book.Section);
 
-function AllBooks() {
-      document.getElementById("BookList").innerHTML = BookList;
-}
-*/
+  $("#editModal").modal("hide");
+});
+
+$(document).on("click", "#editBtn", function () {
+  let bookId = $(this).data("id");
+  let bookIndex = books.findIndex((book) => b00k.id == bookId);
+  let book = books[bookIndex];
+
+  $("#editBookTitle").val(book.Title);
+  $("#editAuthor").val(book.Author);
+  $("#editAge").val(book.Age);
+  $("#editGenre").val(book.Genre);
+  $("#editLanguage").val(book.Language);
+  $("#editSection").val(book.Section);
+  $("#editBookId").val(book.id);
+
+  $("#editModal").modal("show");
+
+});
+
+$(document).on("click", "#clsBtn", function () {
+
+  $("#editModal").modal("hide");
+});
+
+$(document).on("click", "#deleteBtn", function () {
+  let bookId = $(this).data("id");
+  let bookIndex = books.findIndex((book) => b00k.id == bookId);
+  let book = books[bookIndex];
+
+  if (confirm(`Are you sure you want to delete ${book.title}`)) {
+    book.splice(bookIndex, 1);
+    $(`#${book.id}`).remove();
+  }
+});
